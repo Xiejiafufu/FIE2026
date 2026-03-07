@@ -25,7 +25,7 @@
 
 # 组织方团队
 
-- 任务组织者：袁毓林（澳门大学教授，yulinyuan@um.edu.mo）、李斌（南京师范大学教授）
+- 任务组织者：袁毓林（澳门大学教授）、李斌（南京师范大学教授）
 
 - 任务联系人：丛冠良（澳门大学博士生，guanliang.cong@connect.um.edu.mo）、寻天琦（澳门大学博士生，tianqi.xun@connect.um.edu.mo）
 
