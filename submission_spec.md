@@ -190,8 +190,13 @@
   Error Message            含义
   ------------------------ --------------------
   `file format error`      文件不是合法 JSON
+  
   `file encoding error`    文件编码不是 UTF-8
+  
   `item quantity error`    数据条数不为 5000
+  
   `field quantity error`   字段数量不为 3
+  
   `field name error`       字段名称不正确
+  
   `field value error`      字段取值不符合要求
