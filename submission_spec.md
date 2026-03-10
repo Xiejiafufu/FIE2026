@@ -35,13 +35,13 @@
 
 若提交文件不是合法 JSON 文件，系统将返回错误：
 
-    file format error: JSON is expected
+    file format error: JSON is expected.
 
 ## 2.2 文件编码校验
 
 若提交文件编码不是 UTF-8，系统将返回错误：
 
-    file encoding error: UTF-8 is expected
+    file encoding error: UTF-8 is expected.
 
 ------------------------------------------------------------------------
 
@@ -51,7 +51,7 @@
 
 若数据条数多于或少于 5000 条，系统将返回错误：
 
-    item quantity error: 5000 items are expected
+    object quantity error: 5000 objects are expected.
 
 ------------------------------------------------------------------------
 
@@ -59,11 +59,11 @@
 
 提交文件中的每条数据 **必须且只能包含以下三个字段**：
 
-  字段名       类型           说明
-  ------------ -------------- ------------
-  id           integer        数据编号
-  factivity    string         事实性判断
-  confidence   float / null   模型置信度
+  |字段名       |数据类型           |说明
+  |------------ |-------------- |------------
+  |id           |integer        |数据编号
+  |factivity    |string         |事实性判断
+  |confidence   |float / null   |模型置信度
 
 ## 4.1 字段数量检查
 
@@ -78,7 +78,7 @@
 若字段名称不符合要求（必须为
 `id`、`factivity`、`confidence`），系统将返回错误：
 
-    field name error in line XXX: id, factivity, confidence are expected
+    field name error in line XXX: "id", "factivity", "confidence" are expected.
 
 ------------------------------------------------------------------------
 
@@ -99,7 +99,7 @@
 
 若不满足上述条件，系统将返回错误：
 
-    field value error in line XXX: id must be an integer in [1, 5000] and sorted in ascending order
+    field value error in line XXX: "id" must be an integer in [1, 5000] and sorted in ascending order.
 
 ## 5.2 factivity 字段
 
@@ -111,11 +111,11 @@
 
 若出现其他取值，系统将返回错误：
 
-    field value error in line XXX: factivity must be one of {true, false, uncertain}
+    field value error in line XXX: "factivity" must be one of {"true", "false", "uncertain"}.
 
 ## 5.3 confidence 字段
 
-### 情况一：factivity = true 或 false
+### 情况一："factivity" = "true" 或 "false"
 
 当 `factivity` 为 `true` 或 `false` 时，`confidence` 字段必须满足：
 
@@ -135,17 +135,17 @@
 
 若不满足要求，系统将返回错误：
 
-    field value error in line XXX: confidence must be a number in (0.50, 1.00] with two decimal places
+    field value error in line XXX: "confidence" must be a number in (0.50, 1.00] with two decimal places.
 
-### 情况二：factivity = uncertain
+### 情况二："factivity" = "uncertain"
 
 当 `factivity` 为 `uncertain` 时：
 
-`confidence` 字段必须 **为空（null）**。
+`confidence` 字段**必须为空**（`null`）。
 
 若不满足要求，系统将返回错误：
 
-    field value error in line XXX: confidence must be null when factivity is uncertain
+    field value error in line XXX: "confidence" must be null when "factivity" is "uncertain".
 
 ------------------------------------------------------------------------
 
@@ -166,16 +166,16 @@
 
 # 7. 常见错误示例
 
-  错误类型                         示例
-  -------------------------------- ----------------------
-  数据条数错误                     4999 条或 5001 条
-  字段数量错误                     少于或多于 3 个字段
-  字段名称错误                     `fact`, `score`
-  id 未升序                        `1,3,2`
-  id 重复                          两条记录 `id=15`
-  confidence 超范围                `0.40`
-  confidence 小数位错误            `0.756`
-  uncertain 但 confidence 不为空   `"confidence": 0.60`
+ | 错误类型                         |示例|
+  |-------------------------------- |----------------------|
+  |数据条数错误                     |4999 条或 5001 条|
+  |字段数量错误                     |少于或多于 3 个字段|
+  |字段名称错误                     |`fact`, `score`|
+  |id 未升序                       | `1,3,2`|
+  |id 重复                         | 两条记录 `id=15`|
+  |confidence 超范围               | `0.40`|
+  |confidence 小数位错误            |`0.756`|
+  |uncertain 但 confidence 不为空   |`"confidence": 0.60`|
 
 ------------------------------------------------------------------------
 
@@ -187,16 +187,11 @@
 
 示例：
 
-  Error Message            含义
-  ------------------------ --------------------
-  `file format error`      文件不是合法 JSON
-  
-  `file encoding error`    文件编码不是 UTF-8
-  
-  `item quantity error`    数据条数不为 5000
-  
-  `field quantity error`   字段数量不为 3
-  
-  `field name error`       字段名称不正确
-  
-  `field value error`      字段取值不符合要求
+  |Error Message            |含义
+  |------------------------ |--------------------
+  |`file format error`      |文件不是合法 JSON
+  |`file encoding error`    |文件编码不是 UTF-8
+ | `object quantity error`    |数据条数不为 5000
+|  `field quantity error`   |字段数量不为 3 
+|  `field name error`       |字段名称不正确 
+|  `field value error`      |字段取值不符合要求
