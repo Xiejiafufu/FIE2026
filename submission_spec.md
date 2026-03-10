@@ -172,10 +172,10 @@
   |字段数量错误                     |少于或多于 3 个字段|
   |字段名称错误                     |`fact`, `score`|
   |id 未升序                       | `1,3,2`|
-  |id 重复                         | 两条记录 `id=15`|
-  |confidence 超范围               | `0.40`|
-  |confidence 小数位错误            |`0.756`|
-  |uncertain 但 confidence 不为空   |`"confidence": 0.60`|
+  |id 重复                         | 两条记录 `"id" = 15`|
+  |confidence 超范围               | `0.40`, `-0.85`|
+  |confidence 小数位错误            |`0.7563`|
+  |uncertain 但 confidence 不为空   |`{"factivity": "uncertain", "confidence": 0.35}`|
 
 ------------------------------------------------------------------------
 
