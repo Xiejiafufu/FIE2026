@@ -69,7 +69,7 @@
 
 若某条数据字段数量不为 3，系统将返回错误：
 
-    field quantity error in line XXX: 3 fields are expected
+    field quantity error in line XXX: 3 fields are expected.
 
 其中 `XXX` 为 output 文件中的行号。
 
