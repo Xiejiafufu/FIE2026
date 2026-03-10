@@ -9,7 +9,9 @@
 
 # 近期更新 
 
-![Static Badge](https://img.shields.io/badge/20260308-UPDATE-brightgreen?style=plastic)
+![Static Badge](https://img.shields.io/badge/20260310-UPDATE-brightgreen?style=plastic) 更新了网站架构；补充了“提交文件说明”。
+
+![Static Badge](https://img.shields.io/badge/20260308-UPDATE-brightgreen?style=plastic) 更新了网站架构。
 
 # 报名方式 
 
@@ -29,7 +31,7 @@
 
 - 任务联系人：丛冠良（澳门大学博士生，guanliang.cong@connect.um.edu.mo）、寻天琦（澳门大学博士生，tianqi.xun@connect.um.edu.mo）
 
-- 团队成员：吴俊潮（澳门大学博士生）、周立炜（澳门大学博士生）、陈阳（澳门大学博士生）、徐劢（澳门大学博士生）、刘道焕（华中科技大学博士生）、李昌玲（澳门大学硕士生）、李泽华（澳门大学硕士生）、王月瑶（澳门大学硕士生）
+- 团队成员：卢达威（中国人民大学教授）、吴俊潮（澳门大学博士生）、周立炜（澳门大学博士生）、陈阳（澳门大学博士生）、徐劢（澳门大学博士生）、刘道焕（华中科技大学博士生）、李昌玲（澳门大学硕士生）、王月瑶（澳门大学硕士生）、李泽华（澳门大学硕士生）、李君厚（澳门大学硕士生）、阳阳（澳门大学硕士生）、刘若曦（澳门大学硕士生）、朱之鑫（澳门大学硕士生）、陶苏文（澳门大学硕士生）。
 
 
 # 1 任务简介
