@@ -9,7 +9,7 @@
 
 # 近期更新 
 
-![Static Badge](https://img.shields.io/badge/20260310-UPDATE-brightgreen?style=plastic) 更新了网站架构；补充了“提交文件说明”。
+![Static Badge](https://img.shields.io/badge/20260310-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了“[提交文件说明](submission_spec.md)”。
 
 ![Static Badge](https://img.shields.io/badge/20260308-UPDATE-brightgreen?style=plastic) 更新了网站架构。
 
