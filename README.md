@@ -1,5 +1,5 @@
 <div align="center">
-<!-- <img src = "https://github.com/GoThereGit/Chinese-AMR/blob/main/img/camrp2024.png" width=200> -->
+<img src = "badge/UM & FAH.png" width=350>
 </div>
 
 第二十五届中国计算语言学大会技术评测任务<p align="right"><font size=50>[English Version]()(upcoming)</font></p>
