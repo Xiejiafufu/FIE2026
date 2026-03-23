@@ -13,7 +13,7 @@
 
 # 近期更新 
 
-![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了“[《第二届中文叙实性推理评测FIE2026参赛协议》]A greement & Licensee/Participation agreement on FIE2026.pdf)”。
+![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了“[《第二届中文叙实性推理评测FIE2026参赛协议》](A greement & Licensee/Participation agreement on FIE2026.pdf)”。
 
 ![Static Badge](https://img.shields.io/badge/20260310-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了“[提交文件说明](submission_spec.md)”。
 
