@@ -13,7 +13,7 @@
 
 # 近期更新 
 
-![Static Badge](https://img.shields.io/badge/20260323-UPDATE-brightgreen?style=plastic) 更新了网站架构；更新了“报名流程”和“评测数据”的说明
+![Static Badge](https://img.shields.io/badge/20260323-UPDATE-brightgreen?style=plastic) 更新了网站架构；更新了“报名流程”和“评测数据”的说明。
 
 ![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了“[《第二届中文叙实性推理评测FIE2026参赛协议》](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/Agreement%20%26%20License/Participation%20agreement%20on%20FIE2026.pdf)”。
 
@@ -25,7 +25,7 @@
 
 1. 请下载并仔细阅读[《第二届中文叙实性推理评测FIE2026参赛协议》](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/Agreement%20%26%20License/Participation%20agreement%20on%20FIE2026.pdf)（下称《参赛协议》）。如出现PDF无法显示的情况，请更换浏览器，建议使用Chrome浏览器。
 2. 请队长在《参赛协议》的“参赛队伍声明”一栏中填写队伍名称，并签署名字和日期，将签署好的《参赛协议》，以邮件附件形式发送到联系人邮箱tianqi.xun@connect.um.edu.mo。
-3. 在报名邮件正文中，请按一下表格形式填写队伍信息：
+3. 在报名邮件正文中，请按以下表格形式填写队伍信息：
 
 | | 示例 |
 |-----|-----|
@@ -199,18 +199,15 @@
 - 参赛队伍需要参考数据内容自行设计与大模型对话时的提示词，因此在数据中未设置"question"字段。
 - 提示词中必须同时包含当前数据中"text"和"hypothesis"字段的内容。
 - 
-- 提示词的设计可以进行多样化尝试，如提供更多数量的shots、要求使用CoT、要求进行一致性投票、告知动词类型、告知动词的叙实性类型、变换提问句式等等。可参考FIE2025的评测论文。
+- 提示词的设计可以进行多样化尝试，如提供更多数量的shots、要求使用CoT、要求进行一致性投票、告知动词类型、告知动词的叙实性类型、变换提问句式等等。可参考[FIE2025的评测论文](https://github.com/UM-FAH-Yuan/FIE2026/tree/main/papers%20of%20FIE2025)。
 
 <div id="daimashili"></div>
 
 ## 2.6 输出要求
 
-- 结果文件须为JSON格式，其中每条数据只需包含"d_id"和"answer"两个字段即可。注意：微调赛道的数据id末尾以_FT结尾；不微调赛道的数据id末尾以_prompt结尾。务请看清赛道提交结果。
-- 由于所有题目都是单选题，一条数据的"answer"处只允许填写一个值。
 - 禁止对模型回答进行人工修正。
 - 允许使用代码对模型回答进行统一提取，但设计代码时需要注意可复现性。同时，如果模型回答中出现真假判断前后不一致的情况，不可以只提取其中一种判断，而需要重新调整提示词。
-- 无论微调还是不微调赛道，在上传的结果文件中必须包含评测集的全部数据（共2038条），否则在天池平台上提交结果时会显示报错。
-- 结果文件中自然语料与人工语料的顺序安排对评测结果没有影响，只要自然语料的结果与人工语料的结果存放在同一个json文件中即可。
+- 提交文件的要求请见[提交文件说明](submission_spec.md)
 
 ## 2.7 输出样例
 
