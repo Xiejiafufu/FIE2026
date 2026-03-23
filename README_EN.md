@@ -205,7 +205,7 @@ The model must judge the truth value of the entailed sentence *a* based on the c
 
 - Participating teams are required to design their own prompts for conversing with LLMs based on the data content; therefore, no `question` field is included in the data.
 - Prompts must include the content of both the `text` and `hypothesis` fields of the current data instance.
-- Teams are encouraged to explore diverse prompt designs, such as providing more shots, requiring Chain-of-Thought (CoT), requiring consistency voting, informing the model of the verb type or the factivity category of the verb, varying the question format, etc. Reference may be made to the [evaluation papers from FIE2025](https://github.com/UM-FAH-Yuan/FIE2026/tree/main/papers%20of%20FIE2025).
+- Teams are encouraged to explore diverse prompt designs, such as providing more shots, requiring Chain-of-Thought (CoT), requiring consistency voting, informing the model of the verb type or the factivity category of the verb, varying the question format, etc. Reference may be made to the [papers of FIE2025](https://github.com/UM-FAH-Yuan/FIE2026/tree/main/papers%20of%20FIE2025).
 
 <div id="daimashili"></div>
 
