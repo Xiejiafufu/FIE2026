@@ -190,7 +190,7 @@ The model must judge the truth value of the entailed sentence *a* based on the c
     Entailing sentence Aa: Old Zhang did not notice that she was wearing a red dress today.
     Entailed sentence a: She was wearing a red dress today.
     Model judgment: The entailed sentence is 95% likely to be true.
-    Output (JSON fields): {"factivity": "true", "confidence": 0.95}
+    Output: {"factivity": "true", "confidence": 0.95}
 
 - Participating teams must independently select one or more large language models (model type and parameter count are unrestricted); design their own prompts using the released dataset; send each instance to the model; instruct the model to judge the truth value of the `hypothesis` field based on the `text` field; record the model's responses; and finally organize all results into a JSON-format data file.
 - Truth values include three categories:
