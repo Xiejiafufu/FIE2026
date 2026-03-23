@@ -225,7 +225,7 @@ This evaluation continues to distinguish between two testing approaches: the **F
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-# 4 Evaluation Criteria （updating）
+# 4 Evaluation Criteria （Updating）
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -268,7 +268,7 @@ Award structure for each track:
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-# 8 Frequently Asked Questions (Continuously Updated)
+# 8 Frequently Asked Questions (Updating)
 
 - **Q1**: Is the model allowed to output content other than T/F/U/R when generating an answer? For example, generating a CoT reasoning chain before manually extracting the final answer?
 - **A1**: Yes. As long as the answer portion of the model's response is unambiguous (i.e., it clearly states "true/false/uncertain" or equivalent) and internally consistent (i.e., no contradictory answers appear within a single response). If answers are extracted manually, a clear, consistent, and reproducible extraction rule must be provided in the technical report, and the code must be saved for potential inspection.
@@ -287,7 +287,7 @@ Award structure for each track:
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-# 9 References (Continuously Updated)
+# 9 References (Updating)
 
 [1] Chen Zhenyu & Jiang Yining. (2018). Factuality and factivity — The opacity and transparency of the declarative world. *Studies in Linguistics*, (01), 15–37+372–373. doi:CNKI:SUN:YJJK.0.2018-01-002.
 
