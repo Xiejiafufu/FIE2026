@@ -98,7 +98,7 @@ The model must judge the truth value of the entailed sentence *a* based on the c
     Entailing sentence Aa: 老张并没有注意到她今天穿了一件红色的连衣裙。Lao-Zhang did not notice that she was wearing a red dress today.
     Entailed sentence a: 她今天穿了一件红色的连衣裙。She was wearing a red dress today.
     Model judgment: The entailed sentence is 95% likely to be true.
-    Output (JSON fields): {"factivity": "true", "confidence": "0.95"}
+    Output (JSON fields): {"factivity": "true", "confidence": 0.95}
 
 In addition, this evaluation continues to offer two tracks: the **Prompt Track** and the **Fine-Tuning Track**. The Prompt Track does not allow any modification of model parameters; teams may only improve performance through prompt engineering. The Fine-Tuning Track allows teams to select open-source models and fine-tune model parameters using the provided example dataset. Teams are encouraged to explore diverse and combined testing approaches to achieve better performance.
 
@@ -136,14 +136,14 @@ Since the evaluation targets large language models, no training or validation se
         "text": "老张并没有注意到她今天穿了一件红色的连衣裙。",
         "hypothesis": "她今天穿了一件红色的连衣裙。",
         "factivity": "true",
-        "confidence": "0.95"
+        "confidence": 0.95
     },
 {
         "id": "pr_0079",
         "text": "他错误地认为地球是平的。",
         "hypothesis": "地球是平的。",
         "factivity": "false",
-        "confidence": "0.99"
+        "confidence": 0.99
     },
 {
         "id": "pr_0102",
@@ -163,14 +163,14 @@ Since the evaluation targets large language models, no training or validation se
         "text": "老张并没有注意到她今天穿了一件红色的连衣裙。",
         "hypothesis": "她今天穿了一件红色的连衣裙。",
         "factivity": "true",
-        "confidence": "0.95"
+        "confidence": 0.95
     },
 {
         "id": "ft_0079",
         "text": "他错误地认为地球是平的。",
         "hypothesis": "地球是平的。",
         "factivity": "false",
-        "confidence": "0.99"
+        "confidence": 0.99
     },
 {
         "id": "ft_0102",
@@ -194,9 +194,9 @@ The model must judge the truth value of the entailed sentence *a* based on the c
 
 - Participating teams must independently select one or more large language models (model type and parameter count are unrestricted); design their own prompts using the released dataset; send each instance to the model; instruct the model to judge the truth value of the `hypothesis` field based on the `text` field; record the model's responses; and finally organize all results into a JSON-format data file.
 - Truth values include three categories:
-  - If the model determines, based on the background sentence, that the hypothesis is **true**, write `"true"` in the `factivity` field, and write the model's confidence score in the `confidence` field (i.e., the degree to which the model believes the hypothesis is true). The confidence value range is (0.5, 1], and the field value is a string (numeric value rounded to two decimal places).
-  - If the model determines, based on the background sentence, that the hypothesis is **false**, write `"false"` in the `factivity` field, and write the model's confidence score in the `confidence` field (i.e., the degree to which the model believes the hypothesis is false). The confidence value range is (0.5, 1], and the field value is a string (numeric value rounded to two decimal places).
-  - If the model determines that the truth value of the hypothesis **cannot be determined** based on the background sentence, write `"uncertain"` in the `factivity` field, and write `null` in the `confidence` field (note: the field value type here is null).
+  - If the model determines, based on the background sentence, that the hypothesis is **true**, write `"true"` in the `factivity` field, and write the model's confidence score in the `confidence` field (i.e., the degree to which the model believes the hypothesis is true). The confidence value range is (0.5, 1], and the field value is a **number** (numeric value rounded to two decimal places).
+  - If the model determines, based on the background sentence, that the hypothesis is **false**, write `"false"` in the `factivity` field, and write the model's confidence score in the `confidence` field (i.e., the degree to which the model believes the hypothesis is false). The confidence value range is (0.5, 1], and the field value is a **number** (numeric value rounded to two decimal places).
+  - If the model determines that the truth value of the hypothesis **cannot be determined** based on the background sentence, write `"uncertain"` in the `factivity` field, and write `null` in the `confidence` field (note: the field value type here is **null**).
 - If the model refuses to answer, please adjust the prompt and retest.
 - If other issues arise, please contact the task organizers by email.
 - All resources used by participating teams must be described in detail in the final technical report. All experimental code and results should be carefully saved for verification purposes.
