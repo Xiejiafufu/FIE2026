@@ -52,7 +52,7 @@
 
 进行叙实性推理所使用的知识是一种受世界知识（world knowledge）影响较小、主要涉及语言内部各成分之间语义关系的分析性语言知识（analytical knowledge of language）。比如，上面例句中的动词“意识到”要求（预设）它的宾语“局面已经不可挽回”的所指为真，不管该动词前面有没有否定性词语。
 
-与叙实性推理类似的还有反事实推理（Counter-Factual Inference, CFI），这是语义理解中与事件真实性判断有关的两种推理形式，可统称为“真实性推理”（Factuality Inference, FactI）。 相较而言，叙实性推理主要依靠谓词（predicates, 如动词）来表达而反事实推理则主要依靠反事实条件句（counter-factual conditionals）来表达。。例如：
+与叙实性推理类似的还有反事实推理（Counter-Factual Inference, CFI），这是语义理解中与事件真实性判断有关的两种推理形式，可统称为“真实性推理”（Factuality Inference, FactI）。 相较而言，叙实性推理主要依靠谓词（predicates, 如动词）来表达而反事实推理则主要依靠反事实条件句（counter-factual conditionals）来表达。例如：
 
     （3）约翰不知道罗昆是中国人。
     （4）要不是消防队来得及时，大火就要烧到顶楼了。
@@ -65,7 +65,7 @@
 本次评测将着重考察大模型在不同真实语境中的叙实性推理表现有何差异。特别是：当叙实性结构中存在不同的否定词、不同的否定意愿、不同的评价性状语、不同人称和数量类型的主语，以及存在多声性标记和被动化标记等复杂语境条件下，模型的叙实性推理表现如何。例如：
 
     （5）他错误地认为地球是平的。
-    （6）没有证据表明抽烟可以防止病毒感染.
+    （6）没有证据表明抽烟可以防止病毒感染。
     （7）我不能相信他竟是一个八十多岁的老人。
     （8）我不能相信人可以长生不老。
 
@@ -102,9 +102,10 @@
 
 （3）	hypothesis：结论句，即被蕴含句。此字段提供叙实性推理所需的鉴别式，模型需要以背景句的内容来判断此句的真值情况。
 
-（4）	factivity：叙实性。此字段填写模型对结论句真值情况的判断结果：“true”（真）、“false”（假）、“uncertain”：不能确定。
+（4）	factivity：叙实性判定。将模型对结论句真值情况的判断结果写入此字段。字段值包括"true", "false"和"uncertain"三种选项。
 
-（5）	confidence：置信度。在“叙实性”判断结果为“true”或“false”的前提下，此字段填写模型对真值判断结果的置信水平，以及hypothesis置于text之中。
+（5）	confidence：对叙实性判定的置信度，即在text的条件下hypothesis。当"factivity"字段值为"true"或"false"时，需要填写"confidence"字段。
+在“叙实性”判断结果为“true”或“false”的前提下，以及。
 
 ## 2.3 数据样例
 
@@ -114,12 +115,23 @@
 [ {
         "id": "pr_1038",
         "text": "老张并没有注意到她今天穿了一件红色的连衣裙。",
-        "hypothesis": "她今天穿了一件红色的连衣裙。"
+        "hypothesis": "她今天穿了一件红色的连衣裙。",
+        "factivity": "true",
+        "confidence": "0.95"
     },
 {
         "id": "pr_0079",
         "text": "他错误地认为地球是平的。",
-        "hypothesis": "她今天穿了一件红色的连衣裙。"
+        "hypothesis": "地球是平的。"
+        "factivity": "false",
+        "confidence": "0.99"
+    },
+{
+        "id": "pr_0102",
+        "text": "他认为那家新开的餐厅定价过高，普通工薪阶层根本消费不起。",
+        "hypothesis": "新开的餐厅定价过高。"
+        "factivity": "uncertain",
+        "confidence": null
     } ]
 ```
 
@@ -127,14 +139,25 @@
 
 ```json
 [ {
-        "id": "pr_0865",
+        "id": "ft_1038",
         "text": "老张并没有注意到她今天穿了一件红色的连衣裙。",
-        "hypothesis": "她今天穿了一件红色的连衣裙。"
+        "hypothesis": "她今天穿了一件红色的连衣裙。",
+        "factivity": "true",
+        "confidence": "0.95"
     },
 {
-        "id": "pr_1123",
-        "text": "老张并没有注意到她今天穿了一件红色的连衣裙。",
-        "hypothesis": "她今天穿了一件红色的连衣裙。"
+        "id": "ft_0079",
+        "text": "他错误地认为地球是平的。",
+        "hypothesis": "地球是平的。"
+        "factivity": "false",
+        "confidence": "0.99"
+    },
+{
+        "id": "ft_0102",
+        "text": "他认为那家新开的餐厅定价过高，普通工薪阶层根本消费不起。",
+        "hypothesis": "新开的餐厅定价过高。"
+        "factivity": "uncertain",
+        "confidence": null
     } ]
 ```
 
