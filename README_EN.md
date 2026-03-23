@@ -1,7 +1,9 @@
 <div align="center">
-<img src = "badge/UM & FAH.png" width=350>
-&nbsp;&nbsp;
-<img src = "badge/NNU.png" width=50>
+    <img src = "badge/ccl2026.png" width=80>
+    &nbsp;&nbsp;
+    <img src = "badge/UM & FAH.png" width=350>
+    &nbsp;&nbsp;
+    <img src = "badge/NNU.png" width=50>
 </div>
 
 Shared Task 1 of the 25th China National Conference on Computational Linguistics (CCL 2026)<p align="right"><font size=50>[中文版](README.md)</font></p>
