@@ -321,6 +321,6 @@
 
 [14]袁毓林 (202).“X不敢相信Y”构式的叙实性逆转功能与魔术效应——表示‘当事实颠覆信念之后不情愿地悬置不信任’的心理经验. 中国语文(04),387-399+510.
 
-
+[15]Cong, Guanliang, Junchao Wu, Yang Chen, Tianqi Xun, Derek F. Wong, Bin Li & Yulin Yuan. (2025). Overview of CCL25-Eval Task 4: Factivity Inference Evaluation 2025. Proceedings of the 24rd Chinese National Conference on Computational Linguistics (Volume 2: Evaluations).https://aclanthology.org/2025.ccl-2.20 
 
 
