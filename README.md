@@ -204,7 +204,6 @@
 
 - 参赛队伍需要参考数据内容自行设计与大模型对话时的提示词，因此在数据中未设置`question`字段。
 - 提示词中必须同时包含当前数据中`text`和`hypothesis`字段的内容。
-- 
 - 提示词的设计可以进行多样化尝试，如提供更多数量的shots、要求使用CoT、要求进行一致性投票、告知动词类型、告知动词的叙实性类型、变换提问句式等等。可参考[FIE2025的评测论文](https://github.com/UM-FAH-Yuan/FIE2026/tree/main/papers%20of%20FIE2025)。
 
 <div id="daimashili"></div>
