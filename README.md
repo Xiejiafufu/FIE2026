@@ -13,7 +13,7 @@
 
 # 近期更新 
 
-![Static Badge](https://img.shields.io/badge/20260323-UPDATE-brightgreen?style=plastic) 更新了网站架构：新增了“8 常见问题”；更新了“报名流程”和“评测数据”的说明。
+![Static Badge](https://img.shields.io/badge/20260323-UPDATE-brightgreen?style=plastic) 更新了网站架构：新增了“常见问题”；更新了“报名流程”和“评测数据”的说明。新增了[英文版介绍](README_EN)。
 
 ![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了“[《第二届中文叙实性推理评测FIE2026参赛协议》](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/Agreement%20%26%20License/Participation%20agreement%20on%20FIE2026.pdf)”。
 
