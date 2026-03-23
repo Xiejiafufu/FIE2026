@@ -29,12 +29,12 @@ Shared Task 1 of the 25th China National Conference on Computational Linguistics
 
 | | Example |
 |-----|-----|
-| Team Name (modifiable before evaluation begins; used only to distinguish teams during evaluation, not for paper writing) | 禁止蕉绿 |
-| Team Contact Person (primarily responsible for email communication with the organizers; not recommended to change during evaluation) | 丛冠良 |
-| Affiliation (modifiable before evaluation ends; will be used in the leaderboard and the evaluation overview paper) | Department of Chinese Language and Literature, Faculty of Arts and Humanities, University of Macau |
-| Intended Track(s) (modifiable before evaluation ends) | Prompt Track + Fine-Tuning Track |
+| Team Name | Occam's Razor |
+| Team Contact Person| CONG Guanliang |
+| Affiliation  | Department of Chinese Language and Literature, Faculty of Arts and Humanities, University of Macau |
+| Intended Track(s) | Prompt Track + Fine-Tuning Track |
 
-The email subject should follow the format: "FIE2026 Registration + Affiliation + Contact Person". For example: "FIE2026 Registration - University of Macau - Guanliang Cong"
+The email subject should follow the format: "FIE2026 Registration + Affiliation + Contact Person". For example: "FIE2026 Registration - University of Macau - CONG Guanliang".
 
 Registration Notes:
 
@@ -48,13 +48,13 @@ Registration Notes:
 
 # Organizing Team
 
-- Task Organizers: Yuan Yulin (Professor, University of Macau), Li Bin (Professor, Nanjing Normal University).
+- Task Organizers: Prof. Yuan Yulin (University of Macau), Prof. Li Bin (Nanjing Normal University).
 
 - Task Contacts:
 Cong Guanliang (PhD student, University of Macau, guanliang.cong@connect.um.edu.mo),
 Xun Tianqi (PhD student, University of Macau, tianqi.xun@connect.um.edu.mo).
 
-- Team Members: Lu Dawei (Professor, Renmin University of China), Wu Junchao (PhD student, University of Macau), Zhou Liwei (PhD student, University of Macau), Chen Yang (PhD student, University of Macau), Xu Mai (PhD student, University of Macau), Liu Daohuan (PhD student, Huazhong University of Science and Technology), Li Changling (Master's student, University of Macau), Wang Yueyao (Master's student, University of Macau), Li Zehua (Master's student, University of Macau), Li Junhou (Master's student, University of Macau), Yang Yang (Master's student, University of Macau), Liu Ruoxi (Master's student, University of Macau), Zhu Zhixin (Master's student, University of Macau), Tao Suwen (Master's student, University of Macau).
+- Team Members: Prof. Lu Dawei (Renmin University of China), Wu Junchao (PhD student, University of Macau), Zhou Liwei (PhD student, University of Macau), Chen Yang (PhD student, University of Macau), Xu Mai (PhD student, University of Macau), Liu Daohuan (PhD student, Huazhong University of Science and Technology), Li Changling (Master's student, University of Macau), Wang Yueyao (Master's student, University of Macau), Li Zehua (Master's student, University of Macau), Li Junhou (Master's student, University of Macau), Yang Yang (Master's student, University of Macau), Liu Ruoxi (Master's student, University of Macau), Zhu Zhixin (Master's student, University of Macau), Tao Suwen (Master's student, University of Macau).
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -62,8 +62,8 @@ Xun Tianqi (PhD student, University of Macau, tianqi.xun@connect.um.edu.mo).
 
 Factivity Inference (FI) is a semantic understanding task concerned with the judgment of event factuality, primarily involving the expression of factual information in language use. In human communicative interaction, factivity inference manifests as the ability of language users to infer the truth value (true or false) of events described by certain linguistic elements based on the use of verbal predicates (e.g., *believe*, *falsely claim*, *realize*). For example:
 
-    (1) They realized the situation was already irreversible.
-    (2) They did not realize the situation was already irreversible.
+    (1) 他们意识到局面已经不可挽回。They realized the situation was already irreversible.
+    (2) 他们没有意识到局面已经不可挽回。They did not realize the situation was already irreversible.
 
 From both the affirmative sentence in (1) and the negative sentence in (2), one can infer the following fact from the speaker's perspective: "the situation was already irreversible."
 
@@ -71,8 +71,8 @@ The knowledge deployed in factivity inference is an analytical knowledge of lang
 
 Closely related to factivity inference is Counter-Factual Inference (CFI). Both are forms of factuality-related inference in semantic understanding, collectively referred to as "Factuality Inference" (FactI). Comparatively, factivity inference is primarily expressed through predicates (e.g., verbs), while counter-factual inference is primarily expressed through counterfactual conditionals. For example:
 
-    (3) John did not know that Rokun was Chinese.
-    (4) Had the fire brigade not arrived in time, the fire would have spread to the top floor.
+    (3) 约翰不知道罗昆是中国人。John did not know that Rokun was Chinese.
+    (4) 要不是消防队来得及时，大火就要烧到顶楼了。Had the fire brigade not arrived in time, the fire would have spread to the top floor.
 
 From the verb *know* in (3), one can infer the fact: "Rokun is Chinese." From the counterfactual conditional in (4), one can infer two facts: "the fire brigade did arrive in time" and "the fire did not spread to the top floor."
 
@@ -82,10 +82,10 @@ To further enhance the semantic understanding capabilities of large language mod
 
 This evaluation focuses on examining how LLM performance on factivity inference varies across different real-world contexts. In particular, it investigates model performance under complex contextual conditions, such as the presence of different negation words, different negation intentions, different evaluative adverbials, subjects of different persons and quantities, as well as polyphony markers and passivization markers. For example:
 
-    (5) He mistakenly believed that the Earth is flat.
-    (6) There is no evidence that smoking can prevent viral infection.
-    (7) I can't believe he is actually a man in his eighties.
-    (8) I can't believe a person can live forever.
+    (5) 他错误地认为地球是平的。He mistakenly believed that the Earth is flat.
+    (6) 没有证据表明抽烟可以防止病毒感染。There is no evidence that smoking can prevent viral infection.
+    (7) 我不能相信他竟是一个八十多岁的老人。I can't believe he is actually a man in his eighties.
+    (8) 我不能相信人可以长生不老。I can't believe a person can live forever.
 
 From (5), one can infer that "the Earth is flat" is almost certainly false. From (6), one can infer that "smoking cannot prevent viral infection" is highly likely to be false. From (7), one can infer that "he is a man in his eighties" is highly likely to be true. From (8), one can infer that "a person can live forever" is highly likely to be false.
 
@@ -93,8 +93,8 @@ Participating teams are required to design their own prompts using the dataset r
 
 The model must judge the truth value of the entailed sentence *a* based on the content of the entailing sentence *Aa*, and provide a confidence score for that judgment. For example:
 
-    Entailing sentence Aa: Old Zhang did not notice that she was wearing a red dress today.
-    Entailed sentence a: She was wearing a red dress today.
+    Entailing sentence Aa: 老张并没有注意到她今天穿了一件红色的连衣裙。Lao-Zhang did not notice that she was wearing a red dress today.
+    Entailed sentence a: 她今天穿了一件红色的连衣裙。She was wearing a red dress today.
     Model judgment: The entailed sentence is 95% likely to be true.
     Output (JSON fields): {"factivity": "true", "confidence": "0.95"}
 
@@ -131,48 +131,49 @@ Since the evaluation targets large language models, no training or validation se
 ```json
 [ {
         "id": "pr_1038",
-        "text": "Old Zhang did not notice that she was wearing a red dress today.",
-        "hypothesis": "She was wearing a red dress today.",
+        "text": "老张并没有注意到她今天穿了一件红色的连衣裙。",
+        "hypothesis": "她今天穿了一件红色的连衣裙。",
         "factivity": "true",
         "confidence": "0.95"
     },
 {
         "id": "pr_0079",
-        "text": "He mistakenly believed that the Earth is flat.",
-        "hypothesis": "The Earth is flat.",
+        "text": "他错误地认为地球是平的。",
+        "hypothesis": "地球是平的。",
         "factivity": "false",
         "confidence": "0.99"
     },
 {
         "id": "pr_0102",
-        "text": "He believed that the newly opened restaurant was overpriced and completely unaffordable for ordinary wage earners.",
-        "hypothesis": "The newly opened restaurant is overpriced.",
+        "text": "他认为那家新开的餐厅定价过高，普通工薪阶层根本消费不起。",
+        "hypothesis": "新开的餐厅定价过高。",
         "factivity": "uncertain",
         "confidence": null
     } ]
 ```
+
 
 - Fine-Tuning Track
 
 ```json
 [ {
         "id": "ft_1038",
-        "text": "Old Zhang did not notice that she was wearing a red dress today.",
-        "hypothesis": "She was wearing a red dress today.",
+        "text": "老张并没有注意到她今天穿了一件红色的连衣裙。",
+        "hypothesis": "她今天穿了一件红色的连衣裙。",
         "factivity": "true",
         "confidence": "0.95"
     },
 {
         "id": "ft_0079",
-        "text": "He mistakenly believed that the Earth is flat.",
-        "hypothesis": "The Earth is flat.",
+        "text": "他错误地认为地球是平的。",
+        "hypothesis": "地球是平的。",
         "factivity": "false",
         "confidence": "0.99"
     },
 {
         "id": "ft_0102",
-        "text": "He believed that the newly opened restaurant was overpriced and completely unaffordable for ordinary wage earners.",
-        "hypothesis": "The newly opened restaurant is overpriced.",
+        "text": "他认为那家新开的餐厅定价过高，普通工薪阶层根本消费不起。",
+        "hypothesis": "新开的餐厅定价过高。",
         "factivity": "uncertain",
         "confidence": null
     } ]
