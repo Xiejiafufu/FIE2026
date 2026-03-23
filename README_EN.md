@@ -15,9 +15,9 @@ Shared Task 1 of the 25th China National Conference on Computational Linguistics
 
 ![Static Badge](https://img.shields.io/badge/20260323-UPDATE-brightgreen?style=plastic) Updated site structure: added "Section 8 FAQ"; updated descriptions for "Registration Process" and "Evaluation Data". Added [README_EN.md](README_EN.md).
 
-![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) Updated site structure; added the "[Participation Agreement](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/Agreement%20%26%20License/Participation%20agreement%20on%20FIE2026.pdf)".
+![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) Updated site structure; added the [Participation Agreement](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/Agreement%20%26%20License/Participation%20agreement%20on%20FIE2026.pdf).
 
-![Static Badge](https://img.shields.io/badge/20260310-UPDATE-brightgreen?style=plastic) Updated site structure; added "[Submission File Specifications](submission_spec.md)".
+![Static Badge](https://img.shields.io/badge/20260310-UPDATE-brightgreen?style=plastic) Updated site structure; added [Submission File Specifications](submission_spec.md).
 
 ![Static Badge](https://img.shields.io/badge/20260308-UPDATE-brightgreen?style=plastic) Updated site structure.
 
