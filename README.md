@@ -13,7 +13,7 @@
 
 # 近期更新 
 
-![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了“[《第二届中文叙实性推理评测FIE2026参赛协议》](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/Agreement%20%26%20License/%E7%AC%AC%E4%BA%8C%E5%B1%8A%E4%B8%AD%E6%96%87%E5%8F%99%E5%AE%9E%E6%80%A7%E6%8E%A8%E7%90%86%E8%AF%84%E6%B5%8B%EF%BC%88FIE2026%EF%BC%89%E5%8F%82%E8%B5%9B%E5%8D%8F%E8%AE%AE-20260311.pdf)”。
+![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了“[《第二届中文叙实性推理评测FIE2026参赛协议》]A greement & Licensee/Participation agreement on FIE2026.pdf)”。
 
 ![Static Badge](https://img.shields.io/badge/20260310-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了“[提交文件说明](submission_spec.md)”。
 
