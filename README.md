@@ -122,14 +122,14 @@
 {
         "id": "pr_0079",
         "text": "他错误地认为地球是平的。",
-        "hypothesis": "地球是平的。"
+        "hypothesis": "地球是平的。",
         "factivity": "false",
         "confidence": "0.99"
     },
 {
         "id": "pr_0102",
         "text": "他认为那家新开的餐厅定价过高，普通工薪阶层根本消费不起。",
-        "hypothesis": "新开的餐厅定价过高。"
+        "hypothesis": "新开的餐厅定价过高。",
         "factivity": "uncertain",
         "confidence": null
     } ]
@@ -148,14 +148,14 @@
 {
         "id": "ft_0079",
         "text": "他错误地认为地球是平的。",
-        "hypothesis": "地球是平的。"
+        "hypothesis": "地球是平的。",
         "factivity": "false",
         "confidence": "0.99"
     },
 {
         "id": "ft_0102",
         "text": "他认为那家新开的餐厅定价过高，普通工薪阶层根本消费不起。",
-        "hypothesis": "新开的餐厅定价过高。"
+        "hypothesis": "新开的餐厅定价过高。",
         "factivity": "uncertain",
         "confidence": null
     } ]
