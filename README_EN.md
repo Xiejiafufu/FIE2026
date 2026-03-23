@@ -13,7 +13,7 @@ Shared Task 1 of the 25th China National Conference on Computational Linguistics
 
 # Recent Updates
 
-![Static Badge](https://img.shields.io/badge/20260323-UPDATE-brightgreen?style=plastic) Updated site structure: added "Section 8 FAQ"; updated descriptions for "Registration Process" and "Evaluation Data".
+![Static Badge](https://img.shields.io/badge/20260323-UPDATE-brightgreen?style=plastic) Updated site structure: added "Section 8 FAQ"; updated descriptions for "Registration Process" and "Evaluation Data". Added [README_EN.md](README_EN.md).
 
 ![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) Updated site structure; added the "[Participation Agreement for the 2nd Chinese Factivity Inference Evaluation FIE2026](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/Agreement%20%26%20License/Participation%20agreement%20on%20FIE2026.pdf)".
 
@@ -122,7 +122,7 @@ Since the evaluation targets large language models, no training or validation se
 
 (4) **factivity**: The factivity judgment. The model's judgment of the truth value of the hypothesis is written into this field. Valid values are `"true"`, `"false"`, and `"uncertain"`.
 
-(5) **confidence**: The confidence level of the factivity judgment, i.e., the probability of the hypothesis being true (or false) given the background sentence. This field must be filled in when the `factivity` value is `"true"` or `"false"`.
+(5) **confidence**: The confidence level of the factivity judgment, i.e., the certainty of the hypothesis being true (or false) given the background sentence. This field must be filled in when the `factivity` value is `"true"` or `"false"`.
 
 ## 2.3 Data Examples
 
