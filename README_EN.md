@@ -315,6 +315,6 @@ Award structure for each track:
 
 [13] Kiparsky & Kiparsky. (1970). Fact. In M. Bierwisch & K. Heidolph (eds.), *Progress in Linguistics*. The Hague: Mouton. 143–147.
 
-[14] Yuan Yulin. (forthcoming). The factivity-reversal function and magical effect of the "X cannot believe Y" construction — Expressing the psychological experience of 'reluctantly suspending disbelief after facts overturn beliefs.' *Chinese Linguistics*, (04), 387–399+510.
+[14] Yuan Yulin. (2023). The factivity-reversal function and magical effect of the "X cannot believe Y" construction — Expressing the psychological experience of 'reluctantly suspending disbelief after facts overturn beliefs.' *Chinese Linguistics*, (04), 387–399+510.
 
 [15]Cong, Guanliang, Junchao Wu, Yang Chen, Tianqi Xun, Derek F. Wong, Bin Li & Yulin Yuan. (2025). Overview of CCL25-Eval Task 4: Factivity Inference Evaluation 2025. Proceedings of the 24rd Chinese National Conference on Computational Linguistics (Volume 2: Evaluations).[https://aclanthology.org/2025.ccl-2.20](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/papers%20of%20FIE2025/68.pdf) 
