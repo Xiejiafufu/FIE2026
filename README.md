@@ -13,7 +13,7 @@
 
 # 近期更新 
 
-![Static Badge](https://img.shields.io/badge/20260323-UPDATE-brightgreen?style=plastic) 更新了网站架构；更新了“报名流程”和“评测数据”的说明。
+![Static Badge](https://img.shields.io/badge/20260323-UPDATE-brightgreen?style=plastic) 更新了网站架构：新增了“8 常见问题”；更新了“报名流程”和“评测数据”的说明。
 
 ![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了“[《第二届中文叙实性推理评测FIE2026参赛协议》](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/Agreement%20%26%20License/Participation%20agreement%20on%20FIE2026.pdf)”。
 
@@ -44,6 +44,7 @@
 - 队伍联系人主要负责与组织方的邮件沟通，评测过程中不建议更换。
 - 单位信息在评测结束前可修改，最终将用于成绩榜单以及评测综述论文中。
 - 计划参加赛道在评测结束前均可修改。
+- 组织方正在计划开始一个leaderboard网站，待上线后
 
 # 组织方团队
 
