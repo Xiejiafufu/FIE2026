@@ -1,7 +1,9 @@
 <div align="center">
-<img src = "badge/UM & FAH.png" width=350>
-&nbsp;&nbsp;
-<img src = "badge/NNU.png" width=50>
+    <img src = "badge/ccl2026.png" width=80>
+    &nbsp;&nbsp;
+    <img src = "badge/UM & FAH.png" width=350>
+    &nbsp;&nbsp;
+    <img src = "badge/NNU.png" width=50>
 </div>
 
 第二十五届中国计算语言学大会技术评测任务一<p align="right"><font size=50>[English Version](README_EN.md)</font></p>
