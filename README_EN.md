@@ -89,7 +89,7 @@ This evaluation focuses on examining how LLM performance on factivity inference 
     (7) 我不能相信他竟是一个八十多岁的老人。I can't believe he is actually a man in his eighties.
     (8) 我不能相信人可以长生不老。I can't believe a person can live forever.
 
-From (5), one can infer that "the Earth is flat" is almost certainly false. From (6), one can infer that "smoking cannot prevent viral infection" is highly likely to be false. From (7), one can infer that "he is a man in his eighties" is highly likely to be true. From (8), one can infer that "a person can live forever" is highly likely to be false.
+From (5), one can infer that "the Earth is flat" is almost certainly false. From (6), one can infer that "smoking can prevent viral infection" is highly likely to be false. From (7), one can infer that "he is a man in his 80s" is highly likely to be true. From (8), one can infer that "a person can live forever" is highly likely to be false.
 
 Participating teams are required to design their own prompts using the dataset released by the organizers, query LLMs with those prompts, and organize the results into a unified output format. Each data instance is presented as a textual entailment pair ⟨Aa, a⟩ and stored in JSON format.
 
