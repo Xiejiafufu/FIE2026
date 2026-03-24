@@ -8,7 +8,7 @@
 
 Shared Task 1 of the 25th China National Conference on Computational Linguistics (CCL 2026)<p align="right"><font size=50>[中文版](README.md)</font></p>
 
-# <p align="center"><font size=50><strong>The 2nd Chinese Factivity Inference Evaluation</strong></font></p> <p align="center"><font size=50>Factivity Inference Evaluation 2026 (FIE2026)</font></p>
+# <p align="center"><font size=50><strong>第二届中文叙实性推理评测</strong></font></p> <p align="center"><font size=50>Factivity Inference Evaluation 2026 (FIE2026)</font></p>
 
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
