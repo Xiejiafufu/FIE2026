@@ -15,7 +15,7 @@ Shared Task 1 of the 25th China National Conference on Computational Linguistics
 
 # Recent Updates
 
-![Static Badge](https://img.shields.io/badge/20260324-UPDATE-brightgreen?style=plastic) Fixed errors in Examples 5–8 of the "Task Overview" (thanks to Mr./ Mrs. BingJie for pointing this out).
+![Static Badge](https://img.shields.io/badge/20260324-UPDATE-brightgreen?style=plastic) Fixed the explanation errors in Examples 5–8 of the "Task Overview" (thanks to Mr./ Mrs. BingJie for pointing this out).
 
 ![Static Badge](https://img.shields.io/badge/20260323-UPDATE-brightgreen?style=plastic) Updated site structure: added "Section 8 FAQ"; updated descriptions for "Registration Process" and "Evaluation Data". Added [README_EN.md](README_EN.md).
 
