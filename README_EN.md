@@ -223,8 +223,11 @@ The model must judge the truth value of the entailed sentence a based on the con
 
 # 3 Track Settings
 
-This evaluation continues to distinguish between two testing approaches: the **Fine-Tuning Track** and the **Prompt Track** (no fine-tuning). The Fine-Tuning Track allows teams to use the example set as training data to fine-tune a model. The Prompt Track does not allow any modification to the model; teams may only optimize prompt design to elicit responses. In both tracks, a maximum of 3 few-shot examples are allowed in the prompt (3-shot at most). The two tracks will be evaluated and awarded separately. Participating teams may choose to participate in both tracks simultaneously or in only one. Regardless of the chosen track, the entire testing process must be described in detail in the evaluation report.
+FIE2026 will continue to feature two tracks: the Prompt Track and the Fine-Tuning Track. The Prompt Track does not allow any modifications to model parameters while participants may only improve model performance through prompt engineering. The Fine-Tuning Track allows participants to select one or more open-source models as the subjects and to fine-tune their parameters using the provided dataset.
 
+The two tracks will be judged separately. Teams may choose to participate in both tracks simultaneously or in only one. Regardless of which track is chosen, the entire evaluation process must be described in detail in their system report.
+
+For both the Fine-Tuning Track and the Prompt Track, prompts are strictly limited to at most three in-context examples (3-shot).
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 # 4 Evaluation Criteria （Updating）
