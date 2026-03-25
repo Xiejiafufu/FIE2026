@@ -187,7 +187,7 @@ Since the evaluation targets large language models, no training or validation se
 
 The organizers will provide participating teams with an example set and an evaluation set. Evaluation data is presented as textual entailment pairs ⟨Aa, a⟩, all stored in JSON format.
 
-The model must judge the truth value of the entailed sentence *a* based on the content of the entailing sentence *Aa*, and provide a confidence score for that judgment. For example:
+The model must judge the truth value of the entailed sentence a based on the content of the entailing sentence *Aa*, and provide a confidence score for that judgment. For example:
 
     Entailing sentence Aa: Old Zhang did not notice that she was wearing a red dress today.
     Entailed sentence a: She was wearing a red dress today.
