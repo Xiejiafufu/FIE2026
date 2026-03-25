@@ -81,7 +81,7 @@
 
 作为语言推理的一种重要的导航机制和手段，真实性推理具有明确的语言形式方面的线索，是机器进行文本蕴涵识别（textual entailment recognizing）、幻觉处理（hallucination solving）、信念修正（belief revision）等任务的重要的语义基础和形式依据，同时对信息检索、信息抽取、问题回答、情感分析等下游任务都具有重要的价值。目前，大型语言模型（Large Language Models, LLMs）日益具备类人的与外界自主交互的能力，也被称为“智能体”（agent）。从话语中获取事实性信息及说话人对事件真实性判断的主观态度，这对于智能体的自主推理和人机交互的顺畅性而言是极为关键的。
 
-为进一步提升大型语言模型对中文的语义理解能力，实现机器对人类交际话语的深度理解，我们将在FIE2025（[任务网站](https://github.com/UM-FAH-Yuan/FIE2025)；[综述论文](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/papers%20of%20FIE2025/68.pdf)；[录取论文](https://github.com/UM-FAH-Yuan/FIE2026/tree/main/papers%20of%20FIE2025)）的基础上继续推出“第二届中文叙实性推理评测任务”(FIE2026)。
+为进一步提升大型语言模型对中文的语义理解能力，实现机器对人类交际话语的深度理解，我们将在FIE2025（[任务网站](https://github.com/UM-FAH-Yuan/FIE2025)；[综述论文](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/papers%20of%20FIE2025/68.pdf)；[已录取论文](https://github.com/UM-FAH-Yuan/FIE2026/tree/main/papers%20of%20FIE2025)）的基础上继续推出“第二届中文叙实性推理评测任务”(FIE2026)。
 
 本次评测将着重考察大模型在不同真实语境中的叙实性推理表现有何差异。特别是：当叙实性结构中存在不同的否定词、不同的否定意愿、不同的评价性状语、不同人称和数量类型的主语，以及存在多声性标记和被动化标记等复杂语境条件下，模型的叙实性推理表现如何。例如：
 
