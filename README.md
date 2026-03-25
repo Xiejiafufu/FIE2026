@@ -18,9 +18,9 @@
 
 ![Static Badge](https://img.shields.io/badge/20260323-UPDATE-brightgreen?style=plastic) 更新了网站架构：新增了“常见问题”；更新了“报名流程”和“评测数据”的说明。新增了[README_EN.md](README_EN.md)。
 
-![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了“[《第二届中文叙实性推理评测FIE2026参赛协议》](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/Agreement%20%26%20License/Participation%20agreement%20on%20FIE2026.pdf)”。
+![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了[《第二届中文叙实性推理评测FIE2026参赛协议》](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/Agreement%20%26%20License/Participation%20agreement%20on%20FIE2026.pdf)。
 
-![Static Badge](https://img.shields.io/badge/20260310-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了“[提交文件说明](submission_spec.md)”。
+![Static Badge](https://img.shields.io/badge/20260310-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了[提交文件说明](submission_spec.md)。
 
 ![Static Badge](https://img.shields.io/badge/20260308-UPDATE-brightgreen?style=plastic) 更新了网站架构。
 
