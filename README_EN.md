@@ -118,7 +118,7 @@ Since the evaluation targets large language models, no training or validation se
 
 ## 2.2 Data Fields
 
-(1) **id**: Data identifier. IDs follow the format "track code_data number." The track code `pr` indicates data for the Prompt Track; `ft` indicates data for the Fine-Tuning Track.
+(1) **id**: Data identifier. IDs follow the format "track code_data number." The track code `pr` indicates data for the Prompt Track; `ft` indicates data for the Fine-Tuning Track. Data IDs in the sample set follow the `sp_XXX` encoding format.
 
 (2) **text**: The background sentence (entailing sentence). This field provides the context needed for factivity inference; the model must use this as the basis for judging the truth value of the hypothesis.
 
