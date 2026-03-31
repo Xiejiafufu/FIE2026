@@ -189,7 +189,7 @@ The organizers will provide participating teams with an example set and an evalu
 
 The model must judge the truth value of the entailed sentence a based on the content of the entailing sentence *Aa*, and provide a confidence score for that judgment. For example:
 
-    Entailing sentence Aa: Old Zhang did not notice that she was wearing a red dress today.
+    Entailing sentence Aa: Lao-Zhang did not notice that she was wearing a red dress today.
     Entailed sentence a: She was wearing a red dress today.
     Model judgment: The entailed sentence is 95% likely to be true.
     Output: {"factivity": "true", "confidence": 0.95}
