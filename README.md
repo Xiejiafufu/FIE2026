@@ -14,7 +14,7 @@
 
 # 近期更新 
 
-![Static Badge](https://img.shields.io/badge/20260401-UPDATE-brightgreen?style=plastic) 更新了网站架构：调整了`2.2 数据字段`和`2.3 数据样例`的内容。新增了[样例集20260401](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/sample%20sets/sample_20260401.json)。
+![Static Badge](https://img.shields.io/badge/20260401-UPDATE-brightgreen?style=plastic) 更新了网站架构：调整了`2.2 数据字段`和`2.3 数据样例`的内容。新增了[样例集20260401](sample%20sets/sample_20260401.json)。
 
 ![Static Badge](https://img.shields.io/badge/20260324-UPDATE-brightgreen?style=plastic) 订正了“任务简介”中例5-例8的解释错误（感谢BingJie先生/女士向我们指出这一点）。
 
