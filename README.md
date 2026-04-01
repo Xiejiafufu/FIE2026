@@ -14,7 +14,7 @@
 
 # 近期更新 
 
-![Static Badge](https://img.shields.io/badge/20260401-UPDATE-brightgreen?style=plastic) 更新了网站架构：更新了`#5 评测数据`和`#7 评价标准`的内容。新增了[样例集20260401](sample%20sets/sample_20260401.json)。
+![Static Badge](https://img.shields.io/badge/20260401-UPDATE-brightgreen?style=plastic) 更新了网站架构：更新了[评测数据](#%201%20评测赛程（暂定）)和`#7 评价标准`的内容。新增了[样例集20260401](sample%20sets/sample_20260401.json)。
 
 ![Static Badge](https://img.shields.io/badge/20260324-UPDATE-brightgreen?style=plastic) 订正了“4 任务简介”中例5-例8的解释错误（感谢BingJie先生/女士向我们指出这一点）。
 
