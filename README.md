@@ -127,27 +127,27 @@
 
 （5）	`confidence`：对叙实性判定的置信度，即在`text`的条件下认为`hypothesis`在多大程度上为真或为假。当`factivity`字段值为`"true"`或`"false"`时，需要填写`confidence`字段。
 
+样例集数据包含以上五个字段；测试集数据只包含`id`、`text`和`hypothesis`字段。
+
 ## 2.3 数据样例
 
-- 提示词赛道
-
 ```json
 [ {
-        "id": "pr_1038",
+        "id": "sp_001",
         "text": "老张并没有注意到她今天穿了一件红色的连衣裙。",
         "hypothesis": "她今天穿了一件红色的连衣裙。",
         "factivity": "true",
         "confidence": 0.95
     },
 {
-        "id": "pr_0079",
+        "id": "sp_002",
         "text": "他错误地认为地球是平的。",
         "hypothesis": "地球是平的。",
         "factivity": "false",
         "confidence": 0.99
     },
 {
-        "id": "pr_0102",
+        "id": "pr_003",
         "text": "他认为那家新开的餐厅定价过高，普通工薪阶层根本消费不起。",
         "hypothesis": "新开的餐厅定价过高。",
         "factivity": "uncertain",
@@ -155,31 +155,7 @@
     } ]
 ```
 
-- 微调赛道
-
-```json
-[ {
-        "id": "ft_1038",
-        "text": "老张并没有注意到她今天穿了一件红色的连衣裙。",
-        "hypothesis": "她今天穿了一件红色的连衣裙。",
-        "factivity": "true",
-        "confidence": 0.95
-    },
-{
-        "id": "ft_0079",
-        "text": "他错误地认为地球是平的。",
-        "hypothesis": "地球是平的。",
-        "factivity": "false",
-        "confidence": 0.99
-    },
-{
-        "id": "ft_0102",
-        "text": "他认为那家新开的餐厅定价过高，普通工薪阶层根本消费不起。",
-        "hypothesis": "新开的餐厅定价过高。",
-        "factivity": "uncertain",
-        "confidence": null
-    } ]
-```
+更多数据样例请见[样例集]()。
 
 ## 2.4 任务描述
 
