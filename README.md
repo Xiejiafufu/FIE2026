@@ -14,6 +14,8 @@
 
 # 近期更新 
 
+![Static Badge](https://img.shields.io/badge/20260401-UPDATE-brightgreen?style=plastic) 更新了网站架构：调整了[2.2 数据字段](##2.2数据字段)与[2.3 数据样例](##2.3数据样例)的内容。
+
 ![Static Badge](https://img.shields.io/badge/20260324-UPDATE-brightgreen?style=plastic) 订正了“任务简介”中例5-例8的解释错误（感谢BingJie先生/女士向我们指出这一点）。
 
 ![Static Badge](https://img.shields.io/badge/20260323-UPDATE-brightgreen?style=plastic) 更新了网站架构：新增了“常见问题”；更新了“报名流程”和“评测数据”的说明。新增了[README_EN.md](README_EN.md)。
