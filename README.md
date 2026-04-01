@@ -127,7 +127,7 @@
 
 （4）	`factivity`：叙实性判定。将模型对结论句真值情况的判断结果写入此字段。字段值包括`"TRUE"`, `"FALSE"`和`"UNCERTAIN"`三种选项。
 
-（5）	`confidence`：对叙实性判定的置信度，即在`text`的条件下认为`hypothesis`在多大程度上为真或为假。当`factivity`字段值为`"TRUE"`或`"FALSE"`时，`confidence`字段取值范围为(0.5, 1]（左开右闭）；当`factivity`字段值为`"UNCERTAIN"`时，`confidence`字段值固定为`0.5`。
+（5）	`confidence`：对叙实性判定的置信度，即在`text`的条件下认为`hypothesis`在多大程度上为真或为假。当`factivity`字段值为`"TRUE"`或`"FALSE"`时，`confidence`字段取值范围为(0.5, 1]（左开右闭）；当`factivity`字段值为`"UNCERTAIN"`时，`confidence`字段值固定取`0.5`。
 
 样例集数据包含以上五个字段；测试集数据只包含`id`、`text`和`hypothesis`字段。
 
