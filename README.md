@@ -20,7 +20,7 @@
 
 ![Static Badge](https://img.shields.io/badge/20260323-UPDATE-brightgreen?style=plastic) 更新了网站架构：新增了“常见问题”；更新了“报名流程”和“评测数据”的说明。新增了[README_EN.md](README_EN.md)。
 
-![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了[《第二届中文叙实性推理评测FIE2026参赛协议》](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/Agreement%20%26%20License/Participation%20agreement%20on%20FIE2026.pdf)。
+![Static Badge](https://img.shields.io/badge/20260311-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了[《第二届中文叙实性推理评测FIE2026参赛协议》](Agreement%20%26%20License/Participation%20agreement%20on%20FIE2026.pdf)。
 
 ![Static Badge](https://img.shields.io/badge/20260310-UPDATE-brightgreen?style=plastic) 更新了网站架构；新增了[提交文件说明](submission_spec.md)。
 
@@ -28,7 +28,7 @@
 
 # 报名流程 
 
-1. 请下载并仔细阅读[《第二届中文叙实性推理评测FIE2026参赛协议》](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/Agreement%20%26%20License/Participation%20agreement%20on%20FIE2026.pdf)（下称《参赛协议》）。如出现PDF无法显示的情况，请更换浏览器，建议使用Chrome浏览器。
+1. 请下载并仔细阅读[《第二届中文叙实性推理评测FIE2026参赛协议》](Agreement%20%26%20License/Participation%20agreement%20on%20FIE2026.pdf)（下称《参赛协议》）。如出现PDF无法显示的情况，请更换浏览器，建议使用Chrome浏览器。
 2. 请队长在《参赛协议》的“参赛队伍声明”一栏中填写队伍名称，并签署名字和日期，将签署好的《参赛协议》，以邮件附件形式发送到联系人邮箱tianqi.xun@connect.um.edu.mo。
 3. 在报名邮件正文中，请按以下表格形式填写队伍信息：
 
@@ -83,7 +83,7 @@
 
 作为语言推理的一种重要的导航机制和手段，真实性推理具有明确的语言形式方面的线索，是机器进行文本蕴涵识别（textual entailment recognizing）、幻觉处理（hallucination solving）、信念修正（belief revision）等任务的重要的语义基础和形式依据，同时对信息检索、信息抽取、问题回答、情感分析等下游任务都具有重要的价值。目前，大型语言模型（Large Language Models, LLMs）日益具备类人的与外界自主交互的能力，也被称为“智能体”（agent）。从话语中获取事实性信息及说话人对事件真实性判断的主观态度，这对于智能体的自主推理和人机交互的顺畅性而言是极为关键的。
 
-为进一步提升大型语言模型对中文的语义理解能力，实现机器对人类交际话语的深度理解，我们将在FIE2025（[任务网站](https://github.com/UM-FAH-Yuan/FIE2025)；[综述论文](https://github.com/UM-FAH-Yuan/FIE2026/blob/main/papers%20of%20FIE2025/68.pdf)；[已录用论文](https://github.com/UM-FAH-Yuan/FIE2026/tree/main/papers%20of%20FIE2025)）的基础上继续推出“第二届中文叙实性推理评测任务”(FIE2026)。
+为进一步提升大型语言模型对中文的语义理解能力，实现机器对人类交际话语的深度理解，我们将在FIE2025（[任务网站](https://github.com/UM-FAH-Yuan/FIE2025)；[综述论文](papers%20of%20FIE2025/68.pdf)；[已录用论文](papers%20of%20FIE2025)）的基础上继续推出“第二届中文叙实性推理评测任务”(FIE2026)。
 
 本次评测将着重考察大模型在不同真实语境中的叙实性推理表现有何差异。特别是：当叙实性结构中存在不同的否定词、不同的否定意愿、不同的评价性状语、不同人称和数量类型的主语，以及存在多声性标记和被动化标记等复杂语境条件下，模型的叙实性推理表现如何。例如：
 
@@ -183,7 +183,7 @@
 
 - 参赛队伍需要参考数据内容自行设计与大模型对话时的提示词，因此在数据中未设置`question`字段。
 - 提示词中必须同时包含当前数据中`text`和`hypothesis`字段的内容。
-- 提示词的设计可以进行多样化尝试，如提供更多数量的shots、要求使用CoT、要求进行一致性投票、告知动词类型、告知动词的叙实性类型、变换提问句式等等。可参考[FIE2025的评测论文](https://github.com/UM-FAH-Yuan/FIE2026/tree/main/papers%20of%20FIE2025)。
+- 提示词的设计可以进行多样化尝试，如提供更多数量的shots、要求使用CoT、要求进行一致性投票、告知动词类型、告知动词的叙实性类型、变换提问句式等等。可参考[FIE2025的评测论文](papers%20of%20FIE2025)。
 
 <div id="daimashili"></div>
 
