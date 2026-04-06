@@ -26,7 +26,7 @@ The submission file must be a **JSON Array** containing **5,000 prediction resul
 [
   {"id": 1, "factivity": "true", "confidence": 0.87},
   {"id": 2, "factivity": "false", "confidence": 0.73},
-  {"id": 3, "factivity": "uncertain", "confidence": null}
+  {"id": 3, "factivity": "uncertain", "confidence": 0.50}
 ]
 ```
 
@@ -71,7 +71,7 @@ Each data instance in the submission file **must contain exactly the following t
   |------------ |-------------- |------------
   |id           |integer        |数据编号 Data identifier 
   |factivity    |string         |事实性判断 Factivity judgment 
-  |confidence   |float / null   |模型置信度 Model confidence score 
+  |confidence   |float          |模型置信度 Model confidence score 
 
 ## 4.1 字段数量检查 Field Count Check
 
@@ -155,11 +155,12 @@ If the requirements are not met, the system will return the following error:
 
 ### 情况二 Case 2："factivity" = "uncertain"
 
-当 `factivity` 为 `uncertain` 时：
-When `factivity` is `uncertain`:
+当 `factivity` 为 `uncertain` 时，`confidence` 字段必须满足：
+When `factivity` is `uncertain`, the `confidence` field must satisfy:
 
-`confidence` 字段**必须为空**（`null`）。
-The `confidence` field **must be null** (`null`).
+-   不允许为空 Must not be empty
+-   必须为数值类型 Must be a numeric type
+-   字段值固定为 **0.50** The field value is fixed at **0.50**.
 
 若不满足要求，系统将返回错误：
 If the requirement is not met, the system will return the following error:
@@ -176,7 +177,7 @@ If the requirement is not met, the system will return the following error:
 [
   {"id": 1, "factivity": "true", "confidence": 0.87},
   {"id": 2, "factivity": "false", "confidence": 0.73},
-  {"id": 3, "factivity": "uncertain", "confidence": null},
+  {"id": 3, "factivity": "uncertain", "confidence": 0.50},
   {"id": 4, "factivity": "true", "confidence": 0.91}
 ]
 ```
@@ -194,7 +195,7 @@ If the requirement is not met, the system will return the following error:
   |id 重复 Duplicate id   | 两条记录 `"id" = 15` Two records with `"id" = 15`|
   |confidence 超范围 confidence out of range| `0.40`, `-0.85`|
   |confidence 小数位错误 confidence with incorrect decimal places |`0.7563`|
-  |uncertain 但 confidence 不为空 uncertain but confidence is not null|`{"factivity": "uncertain", "confidence": 0.35}`|
+  |uncertain 但 confidence 不为0.50 uncertain but confidence is not 0.50|`{"factivity": "uncertain", "confidence": 0.35}`|
 
 
 ------------------------------------------------------------------------
