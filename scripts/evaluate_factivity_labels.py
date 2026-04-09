@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import re
 import sys
 import time
 from collections import Counter, defaultdict
@@ -28,17 +29,17 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--model",
-        default="gpt-5.4",
+        default="gpt-5.4-mini",
         help="Model name for the OpenAI-compatible chat completions API. Default: gpt-5.4",
     )
     parser.add_argument(
         "--api-key",
-        default=os.environ.get("OPENAI_API_KEY"),
+        default="sk-An04fTe5nxf2aIhxt6ZDBzzmZci90EPBex3zKKaN0VDVeLMR",
         help="OpenAI API key. Defaults to OPENAI_API_KEY.",
     )
     parser.add_argument(
         "--base-url",
-        default=os.environ.get("OPENAI_BASE_URL") or os.environ.get("OPENAI_API_BASE"),
+        default="https://api.chatanywhere.tech/v1",
         help="Base URL for an OpenAI-compatible API. Defaults to OPENAI_BASE_URL or OPENAI_API_BASE.",
     )
     parser.add_argument(
@@ -83,15 +84,39 @@ def load_dataset(path: Path) -> list[dict[str, Any]]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+# def build_single_turn_prompt(text: str, hypothesis: str) -> str:
+#     return (
+#         "任务：根据给定的 text 和 hypothesis，判断 hypothesis 在 text 语境中的叙实性标签。\n"
+#         "请严格按照以下格式输出，不要输出其他格式：\n"
+#         "<think>你的分析</think>\n"
+#         "<answer>TRUE</answer>\n"
+#         "其中 answer 只能是 TRUE、FALSE、UNCERTAIN 三者之一。\n\n"
+#         f"text: {text}\n"
+#         f"hypothesis: {hypothesis}"
+#     )
+
 def build_single_turn_prompt(text: str, hypothesis: str) -> str:
-    return (
-        "任务：根据给定的 text 和 hypothesis，判断 hypothesis 在 text 语境中的叙实性标签。\n"
-        "只输出一个 JSON 对象，不要输出其他内容。\n"
-        'JSON 格式：{"factivity":"TRUE"}\n'
-        "factivity 只能是 TRUE、FALSE、UNCERTAIN 三者之一。\n\n"
-        f"text: {text}\n"
-        f"hypothesis: {hypothesis}"
-    )
+    return f"""任务：根据给定的 text 和 hypothesis，判断 hypothesis 在 text 语境中的叙实性标签。
+
+这里判断的不是“你这个模型对答案有多确定”，而是 text 中的说话人或认知主体，对 hypothesis 所表达命题的态度是什么。
+
+请注意：
+1. 你要判断的是：在 text 中，主体是否把 hypothesis 当作真、假，或不确定。
+2. TRUE 表示：text 体现出主体将 hypothesis 对应的命题视为真。
+3. FALSE 表示：text 体现出主体将 hypothesis 对应的命题视为假。
+4. UNCERTAIN 表示：text 体现出主体对 hypothesis 对应的命题不作真值承诺，或仅表达猜测、担心、希望、认为等不确定态度。
+5. 不要把任务理解成“你自己是否有把握”；这里要判断的是 text 中主体的立场，而不是你的立场。
+
+输出要求：
+请严格按照以下格式输出，不要输出其他格式：
+<think>你的分析</think>
+<answer>TRUE</answer>
+
+其中 answer 只能是 TRUE、FALSE、UNCERTAIN 三者之一。
+
+text: {text}
+hypothesis: {hypothesis}"""
+
 
 
 def normalize_label(value: str) -> str:
@@ -101,20 +126,18 @@ def normalize_label(value: str) -> str:
     return label
 
 
-def extract_json_object(raw_text: str) -> dict[str, Any]:
+def extract_answer_label(raw_text: str) -> str:
     raw_text = raw_text.strip()
-    try:
-        parsed = json.loads(raw_text)
-    except json.JSONDecodeError:
-        start = raw_text.find("{")
-        end = raw_text.rfind("}")
-        if start == -1 or end == -1 or end < start:
-            raise
-        parsed = json.loads(raw_text[start : end + 1])
+    match = re.search(r"<answer>\s*(TRUE|FALSE|UNCERTAIN)\s*</answer>", raw_text, re.IGNORECASE)
+    if match:
+        return normalize_label(match.group(1))
 
-    if not isinstance(parsed, dict):
-        raise ValueError(f"Expected a JSON object, got: {type(parsed).__name__}")
-    return parsed
+    # Fallback for models that return only the bare label.
+    bare = raw_text.strip()
+    if bare.upper() in VALID_LABELS:
+        return normalize_label(bare)
+
+    raise ValueError(f"Could not extract label from model output: {raw_text!r}")
 
 
 @dataclass
@@ -165,7 +188,7 @@ class MockSingleTurnClient:
         elif any(marker in text_lower for marker in uncertain_markers):
             label = "UNCERTAIN"
 
-        return json.dumps({"factivity": label}, ensure_ascii=False)
+        return f"<think>mock smoke test</think><answer>{label}</answer>"
 
 
 class OpenAICompatibleChatClient:
@@ -203,14 +226,16 @@ class OpenAICompatibleChatClient:
                             "content": prompt,
                         }
                     ],
-                    temperature=0,
-                    max_tokens=32,
-                    response_format={"type": "json_object"},
+                    temperature=0.3,
+                    max_tokens=512,
                 )
-                content = response.choices[0].message.content
+                content = response.choices[0].message.content.strip()
+                print('-'*20)
+                print(content)
+                print('-'*20)
                 if content is None:
                     raise ValueError("Model returned empty content.")
-                return content.strip()
+                return content
             except Exception as exc:
                 last_error = exc
                 if attempt < self.max_retries:
@@ -247,8 +272,7 @@ def evaluate(
 
     for index, item in enumerate(data, start=1):
         raw_output = client.predict(item["text"], item["hypothesis"])
-        pred_obj = extract_json_object(raw_output)
-        pred_label = normalize_label(pred_obj["factivity"])
+        pred_label = extract_answer_label(raw_output)
         gold_label = normalize_label(item["factivity"])
         ok = pred_label == gold_label
 
