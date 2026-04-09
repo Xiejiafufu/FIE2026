@@ -8,13 +8,11 @@ from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 from typing import Any
-from urllib import error, request
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DATASET = ROOT / "sample sets" / "sample_20260401.json"
 DEFAULT_OUTPUT_DIR = ROOT / "outputs"
-OPENAI_API_URL = "https://api.openai.com/v1/responses"
 VALID_LABELS = ("TRUE", "FALSE", "UNCERTAIN")
 
 
@@ -31,7 +29,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--model",
         default="gpt-5.4",
-        help="Model name for the OpenAI Responses API. Default: gpt-5.4",
+        help="Model name for the OpenAI-compatible chat completions API. Default: gpt-5.4",
     )
     parser.add_argument(
         "--api-key",
@@ -39,10 +37,15 @@ def parse_args() -> argparse.Namespace:
         help="OpenAI API key. Defaults to OPENAI_API_KEY.",
     )
     parser.add_argument(
+        "--base-url",
+        default=os.environ.get("OPENAI_BASE_URL") or os.environ.get("OPENAI_API_BASE"),
+        help="Base URL for an OpenAI-compatible API. Defaults to OPENAI_BASE_URL or OPENAI_API_BASE.",
+    )
+    parser.add_argument(
         "--provider",
         choices=("openai", "mock"),
         default="openai",
-        help="Inference backend. Use 'mock' for a local smoke test.",
+        help="Inference backend. 'openai' uses the OpenAI-compatible chat completions API. Use 'mock' for a local smoke test.",
     )
     parser.add_argument(
         "--max-samples",
@@ -114,19 +117,6 @@ def extract_json_object(raw_text: str) -> dict[str, Any]:
     return parsed
 
 
-def extract_output_text(response_json: dict[str, Any]) -> str:
-    texts: list[str] = []
-    for item in response_json.get("output", []):
-        if item.get("type") != "message":
-            continue
-        for content in item.get("content", []):
-            if content.get("type") == "output_text":
-                texts.append(content.get("text", ""))
-    if not texts:
-        raise ValueError("No output_text found in API response.")
-    return "".join(texts).strip()
-
-
 @dataclass
 class Prediction:
     sample_id: str
@@ -178,77 +168,55 @@ class MockSingleTurnClient:
         return json.dumps({"factivity": label}, ensure_ascii=False)
 
 
-class OpenAIResponsesSingleTurnClient:
-    def __init__(self, model: str, api_key: str, max_retries: int) -> None:
+class OpenAICompatibleChatClient:
+    def __init__(
+        self,
+        model: str,
+        api_key: str,
+        base_url: str | None,
+        max_retries: int,
+    ) -> None:
+        try:
+            from openai import OpenAI
+        except ImportError as exc:
+            raise SystemExit(
+                "The 'openai' package is required for --provider openai. "
+                "Install it with: pip install openai"
+            ) from exc
+
         self.model = model
-        self.api_key = api_key
         self.max_retries = max_retries
+        client_kwargs: dict[str, Any] = {"api_key": api_key}
+        if base_url:
+            client_kwargs["base_url"] = base_url.rstrip("/")
+        self.client = OpenAI(**client_kwargs)
 
     def predict(self, text: str, hypothesis: str) -> str:
         prompt = build_single_turn_prompt(text, hypothesis)
-        payload = {
-            "model": self.model,
-            "input": prompt,
-            "store": False,
-            "max_output_tokens": 32,
-            "text": {
-                "format": {
-                    "type": "json_schema",
-                    "name": "factivity_label",
-                    "strict": True,
-                    "schema": {
-                        "type": "object",
-                        "properties": {
-                            "factivity": {
-                                "type": "string",
-                                "enum": list(VALID_LABELS),
-                            }
-                        },
-                        "required": ["factivity"],
-                        "additionalProperties": False,
-                    },
-                }
-            },
-        }
-
-        body = json.dumps(payload).encode("utf-8")
-        req = request.Request(
-            OPENAI_API_URL,
-            data=body,
-            method="POST",
-            headers={
-                "Authorization": f"Bearer {self.api_key}",
-                "Content-Type": "application/json",
-            },
-        )
-
-        last_error: Exception | None = None
         for attempt in range(1, self.max_retries + 1):
             try:
-                with request.urlopen(req, timeout=120) as resp:
-                    response_json = json.loads(resp.read().decode("utf-8"))
-                return extract_output_text(response_json)
-            except error.HTTPError as exc:
-                message = exc.read().decode("utf-8", errors="replace")
-                last_error = RuntimeError(
-                    f"HTTP {exc.code} while calling OpenAI API: {message}"
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": prompt,
+                        }
+                    ],
+                    temperature=0,
+                    max_tokens=32,
+                    response_format={"type": "json_object"},
                 )
-                if exc.code in {408, 409, 429, 500, 502, 503, 504} and attempt < self.max_retries:
-                    time.sleep(2 ** (attempt - 1))
-                    continue
-                raise last_error
-            except error.URLError as exc:
-                last_error = RuntimeError(f"Network error while calling OpenAI API: {exc}")
-                if attempt < self.max_retries:
-                    time.sleep(2 ** (attempt - 1))
-                    continue
-                raise last_error
+                content = response.choices[0].message.content
+                if content is None:
+                    raise ValueError("Model returned empty content.")
+                return content.strip()
             except Exception as exc:
                 last_error = exc
                 if attempt < self.max_retries:
                     time.sleep(2 ** (attempt - 1))
                     continue
-                raise
+                raise RuntimeError(f"Chat completion request failed: {exc}") from exc
 
         raise RuntimeError(f"Prediction failed after retries: {last_error}")
 
@@ -260,9 +228,10 @@ def make_client(args: argparse.Namespace) -> Any:
         raise SystemExit(
             "Missing API key. Set OPENAI_API_KEY or pass --api-key, or use --provider mock."
         )
-    return OpenAIResponsesSingleTurnClient(
+    return OpenAICompatibleChatClient(
         model=args.model,
         api_key=args.api_key,
+        base_url=args.base_url,
         max_retries=args.max_retries,
     )
 
